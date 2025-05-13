@@ -1,4 +1,6 @@
 Docker commands for executing in the build steps section of Jenkins
+  # Stop and remove any container running on port 5000
+  sudo docker ps -q --filter "publish=5000" | grep -q . && docker stop $(docker ps -q --filter "publish=5000")
   sudo docker build -t jenkinstodo .
   sudo docker run -p 5000:5000 -d jenkinstodo 
 
