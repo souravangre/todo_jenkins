@@ -25,10 +25,17 @@
 
  📸 Screenshots
 - Jenkins build success
-- ![console1](https://github.com/user-attachments/assets/2fbacae8-3125-423c-93d5-aa818968f64d)
+ ![console1](https://github.com/user-attachments/assets/2fbacae8-3125-423c-93d5-aa818968f64d)
+
 - App running in browser
-- ![todo1](https://github.com/user-attachments/assets/33ab9310-dac6-4ce4-87a2-cb032e9bb90f)
+ ![todo1](https://github.com/user-attachments/assets/33ab9310-dac6-4ce4-87a2-cb032e9bb90f)
+
 - Jenkins modified after Github changes
+  ![console2](https://github.com/user-attachments/assets/0d469eb9-bc77-4f4c-b9a4-a47a13db8c4d)
+  
+- Modified App after automation
+  ![todo2](https://github.com/user-attachments/assets/2dd23cc0-6347-4e28-9a96-2be943693a9f)
+
 
 
 
