@@ -15,9 +15,9 @@
 
  🚀 How to Run
 1. Clone this repo and push code to your repo
-2. Launch AWS EC2 (Ubuntu server)
+2. Launch AWS EC2 (Ubuntu server) ---> Check security  group (Allow Ports: 22,8080,5000 from your IP)
 3. Install Jenkins and Docker on EC2
-4. Run the jenkins serverand add configurations of Github server
+4. Run the jenkins server and add configurations of Github server
 5. Follow `deploy.sh` or setup Jenkins job
 6. Edit visudo file if the sudo permissions problem occur
 7. Build the job ---> SUCCESS 
@@ -25,6 +25,11 @@
 
  📸 Screenshots
 - Jenkins build success
+- ![console1](https://github.com/user-attachments/assets/2fbacae8-3125-423c-93d5-aa818968f64d)
 - App running in browser
+- ![todo1](https://github.com/user-attachments/assets/33ab9310-dac6-4ce4-87a2-cb032e9bb90f)
+- Jenkins modified after Github changes
+
+
 
 
