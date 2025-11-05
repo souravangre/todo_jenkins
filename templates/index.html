@@ -1,48 +1,144 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do App</title>
     <style>
         body {
-            font-family: Arial;
-            margin: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74ABE2, #5563DE);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            min-height: 100vh;
+            padding: 40px 20px;
         }
 
-        .task {
-            margin: 10px 0;
+        .container {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            padding: 30px 40px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        h2 {
+            color: #777;
+            font-weight: normal;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
         }
 
         form input[type="text"] {
-            padding: 8px;
-            width: 200px;
+            padding: 10px;
+            width: 70%;
+            border: 1px solid #ccc;
+            border-radius: 8px 0 0 8px;
+            outline: none;
+            transition: all 0.3s ease;
         }
 
-        button,
-        a {
-            padding: 5px 10px;
+        form input[type="text"]:focus {
+            border-color: #5563DE;
+            box-shadow: 0 0 5px rgba(85, 99, 222, 0.4);
+        }
+
+        form button {
+            background-color: #5563DE;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #3b48a5;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .task {
+            background: #f9f9f9;
+            border: 1px solid #eee;
+            padding: 12px 15px;
+            margin: 8px 0;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .task:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .task a {
             text-decoration: none;
+            color: #ff4d4d;
+            font-weight: bold;
+            transition: color 0.2s ease;
+        }
+
+        .task a:hover {
+            color: #d93636;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #eee;
         }
     </style>
 </head>
-
 <body>
-    <h1>My To-Do List</h1>
-    <h2>let's Add tasks for today</h2>
+    <div class="container">
+        <h1>📝 My To-Do List</h1>
+        <h2>Let's add some tasks for today</h2>
 
-    <form method="POST">
-        <input type="text" name="content" placeholder="Enter task..." required>
-        <button type="submit">Add</button>
-    </form>
+        <form method="POST">
+            <input type="text" name="content" placeholder="Enter a new task..." required>
+            <button type="submit">Add</button>
+        </form>
 
-    <ul>
-        {% for task in tasks %}
-        <li class="task">
-            {{ task.content }}
-            <a href="/delete/{{ task.id }}">Delete</a>
-        </li>
-        {% endfor %}
-    </ul>
+        <ul>
+            {% for task in tasks %}
+            <li class="task">
+                {{ task.content }}
+                <a href="/delete/{{ task.id }}">Delete</a>
+            </li>
+            {% else %}
+            <p style="color: #777;">No tasks yet. Add one above!</p>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <footer>
+        <p>✨ Simple Flask To-Do App ✨</p>
+    </footer>
 </body>
-
 </html>
